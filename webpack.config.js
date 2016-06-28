@@ -26,7 +26,12 @@ module.exports = {
       },
       {
         test: /\.css?$/,
-        loaders: [ 'style', 'raw' ],
+        loaders: [ 'style', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' ],
+        include: __dirname
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
         include: __dirname
       }
     ]

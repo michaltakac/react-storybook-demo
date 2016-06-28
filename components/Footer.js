@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import classnames from 'classnames'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+import styles from './test-sass.scss'
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
@@ -15,7 +16,7 @@ class Footer extends Component {
 
     return (
       <span className="todo-count">
-        <strong>{activeCount || 'No'}</strong> {itemWord} left
+        <strong className={styles.test}>{activeCount || 'No'}</strong> {itemWord} left
       </span>
     )
   }
